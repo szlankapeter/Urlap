@@ -24,6 +24,7 @@ class UrlapView {
                 console.log("valid az uralp");
                 this.#urlapElemLista.forEach(elem => {
                     this.#urlapAdat[elem.key] = elem.value;
+                    console.log(elem.value);
                 })
                 this.#esemeny("submit");
             } else {

@@ -8,10 +8,11 @@ class NumberElemUrlap {
         this.#key = key;
         this.formElem = formElem;
         this.#numElem();
-
+        
         this.inputElem = $(`#${this.#key}`);
         this.validElem = $(".valid:last");
         this.invalidElem = $(".invalid:last");
+        this.#value = this.inputElem.val();
         this.inputElem.on("keyup", () => {
             this.#value = this.inputElem.val();
             if (this.#leiro.regex.min < this.#value && this.#value < this.#leiro.regex.max+1) {
