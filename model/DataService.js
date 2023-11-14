@@ -1,7 +1,7 @@
 class DataService {
 
     constructor() {
-
+        
     }
 
     getAxiusData(url, callback) {
@@ -22,14 +22,21 @@ class DataService {
     }
 
     postAxiusData(url, obj) {
-        console.log(obj);
-        console.log(`{
-            nev: 'Fred',
-            szul: 20030405
-        }`);
         axios.post(url, obj)
             .then(function (response) {
                 console.log(response);
+                location.reload()
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    deleteAxiusData(url, id) {
+        axios.delete(url+'/'+id)
+            .then(function (response) {
+                console.log(response);
+                location.reload()
             })
             .catch(function (error) {
                 console.log(error);

@@ -1,3 +1,5 @@
+import TablaSor from "./TablaSor.js";
+
 class adatView {
 
     #lista = [];
@@ -10,13 +12,15 @@ class adatView {
     }
 
     tablazatbaIr() {
-        let txt = "";
+        /* let txt = "";
         for (let i = 0; i < this.#lista.length; i++) {
-            console.log(this.#lista[i].nev);
-            console.log(i);
             txt += `<tr><td>${this.#lista[i].nev}</td><td>${this.#lista[i].szul}</td></tr>`;
         }
-        this.tablaElem.append(txt);
+        this.tablaElem.append(txt); */
+        this.#lista.forEach((elem, index)=>{
+            new TablaSor(elem, index, this.tablaElem);
+        })
+        
     }
 
 } export default adatView

@@ -14,7 +14,11 @@ class UrlapController {
         $(window).on("submit", function (event) {
             console.log(event.detail);
             DS.postAxiusData("http://localhost:8000/api/writers", event.detail);
+            
         })
+        $(window).on("törlés", function(event){
+            DS.deleteAxiusData("http://localhost:8000/api/writers", event.detail)
+        });
     }
 
     megjelenit(lista) {
